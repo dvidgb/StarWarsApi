@@ -25,23 +25,44 @@ final class NetworkingProvider{
     private let kStatusOk = 200...299
     
     
+    //función para obtener los datos de un persona
     
     func getUser(id: Int, succes: @escaping (_ user: User) -> (), failure: @escaping (_ error: Error?) -> ())    {
         
         let url = "\(kBaseUrl)people/\(id)"
         
-        AF.request(url, method: .get).validate(statusCode: kStatusOk).responseDecodable (of: UserReponse.self) {
+        AF.request(url, method: .get).validate(statusCode: kStatusOk).responseDecodable (of: User.self) {
            response in
             
             //comprobación de si la respuesta es correcta
-            if let user = response.value?.results{
+            if let user = response.value{
                 succes(user)
             }else{
                 failure(response.error)
             }
             
         }
-    }
-    //función para obtener los datos de un usuario
+    }//fin función
+    
+    func getStarship(id: Int, succes: @escaping (_ starship: Starships) -> (), failure: @escaping (_ error: Error?) -> ())    {
+        
+        let url = "\(kBaseUrl)starships/\(id)"
+        
+        AF.request(url, method: .get).validate(statusCode: kStatusOk).responseDecodable (of: Starships.self) {
+           response in
+            
+            //comprobación de si la respuesta es correcta
+            if let star = response.value{
+                succes(star)
+            }else{
+                failure(response.error)
+            }
+            
+        }
+    }//fin función
+    
+    
+    
 }
+
 

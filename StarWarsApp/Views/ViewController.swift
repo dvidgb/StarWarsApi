@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     
     
-    @IBOutlet weak var heightLabel: UILabel!
+   
     
     
     
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         self.nameLabel.numberOfLines = 0
         
         nameLabel.text = ""
-        heightLabel.text = ""
+        
         
         
     }
@@ -43,10 +43,7 @@ class ViewController: UIViewController {
               
             self.nameLabel.text = user.name
             
-            
-            
-            
-              
+          
           } failure: { (error) in
               
               
@@ -54,6 +51,17 @@ class ViewController: UIViewController {
               self.nameLabel.text = error.debugDescription
           }
         
+    }//fin PeopleAction
+    
+    
+    
+    
+    
+    
+    @IBAction func StarshipsButtonAction(_ sender: Any) {
+        
+        
+        self.navigationController?.pushViewController(StarshipsViewController(),animated: true)
     }
     
     
