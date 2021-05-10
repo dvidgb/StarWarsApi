@@ -8,8 +8,11 @@
 import Foundation
 import Alamofire
 
+
+
+
 // MARK: - Starships
-struct Starships: Codable {
+struct Starship: Decodable {
     let name, model, manufacturer, costInCredits: String?
     let length, maxAtmospheringSpeed, crew, passengers: String?
     let cargoCapacity, consumables, hyperdriveRating, mglt: String?
@@ -32,3 +35,11 @@ struct Starships: Codable {
         case created, edited, url
     }
 }
+
+extension Starship: CustomStringConvertible {
+    var description: String {
+          return "\(model!)"
+      }
+}
+ 
+

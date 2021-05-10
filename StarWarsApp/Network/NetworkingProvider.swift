@@ -11,6 +11,8 @@ import Alamofire
 
 final class NetworkingProvider{
     
+   
+    
     //constate estática shared esto es un estándar en swift
     //es una instancia compartida durante toda la apliación
     //que será igual a nuestra clase
@@ -44,7 +46,7 @@ final class NetworkingProvider{
         }
     }//fin función
     
-    func getStarship(id: Int, succes: @escaping (_ starship: Starships) -> (), failure: @escaping (_ error: Error?) -> ())    {
+  /*  func getStarship(id: Int, succes: @escaping (_ starship: Starships) -> (), failure: @escaping (_ error: Error?) -> ())    {
         
         let url = "\(kBaseUrl)starships/\(id)"
         
@@ -60,7 +62,9 @@ final class NetworkingProvider{
             
         }
     }//fin función
+    */
     
+
     
     
 }

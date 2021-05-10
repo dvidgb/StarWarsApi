@@ -6,43 +6,79 @@
 //
 
 import UIKit
+import Alamofire
 
-class StarshipsViewController: UIViewController {
+class StarshipsViewController: UIViewController, UITableViewDelegate {
 
-    @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var tableView: UITableView!
+    
+    private let kBaseUrl = "https://swapi.dev/api/"
+    
+    var items: [CustomStringConvertible] = []
+
+    @IBOutlet weak var titletextlabel: UILabel!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView?.delegate = self
+        self.tableView?.dataSource = self
         
-        self.nameLabel.numberOfLines = 0
-        
-        nameLabel.text = ""
-    }
+       
+        getDataFromApi()
 
-
+    }//fin viewDidLoad
     
-    @IBAction func getStarshipAction(_ sender: Any) {
+    
+    func getDataFromApi(){
         
-        NetworkingProvider.shared.getStarship(id: 2) { (starship) in
-            //cuando tenemos datos se oculta
             
-            
-            self.nameLabel.text = starship.model
-          
+            let url = "\(kBaseUrl)starships/"
         
-        } failure: { (error) in
-            
-            
-            // en caso de que ocurre un error nos lo muestra en el label del nombre
-            self.nameLabel.text = error.debugDescription
-        }
-    }
+        
+            AF.request(url)
+          .validate()
+                .responseDecodable(of: Starships.self) { (response) in
+            guard let starships = response.value else { return }
+                    //print(starships.all[0].name)
+                    self.items = starships.all
+                    self.tableView?.reloadData()
+          }
+    }//fin método
+    
     
 }
 
+    
 
 
+extension StarshipsViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+       
+        var cell = tableView.dequeueReusableCell(withIdentifier: "mycell")
+        
+        let item = items[indexPath.row]
+        
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: "mycell")
+            
+                
+            cell!.textLabel?.text = item.description
+        
+        return cell!
+
+        }else{
+            return cell!
+        }
+}
+    
+}
