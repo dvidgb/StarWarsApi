@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		636F0F4B264514BD0075D654 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636F0F4A264514BC0075D654 /* Assets.xcassets */; };
 		639EE065264914D50035CF82 /* Starships.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639EE064264914D50035CF82 /* Starships.swift */; };
+		639EE06B264951CC0035CF82 /* StarshipsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639EE06A264951CC0035CF82 /* StarshipsView.xib */; };
+		639EE06D2649527E0035CF82 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639EE06C2649527E0035CF82 /* HomeView.xib */; };
 		63A73A1A2643CD8D00DE97F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A73A192643CD8D00DE97F7 /* AppDelegate.swift */; };
 		63A73A1C2643CD8D00DE97F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A73A1B2643CD8D00DE97F7 /* SceneDelegate.swift */; };
-		63A73A1E2643CD8D00DE97F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A73A1D2643CD8D00DE97F7 /* ViewController.swift */; };
-		63A73A212643CD8D00DE97F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A73A1F2643CD8D00DE97F7 /* Main.storyboard */; };
+		63A73A1E2643CD8D00DE97F7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A73A1D2643CD8D00DE97F7 /* HomeViewController.swift */; };
 		63A73A262643CD8F00DE97F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A73A242643CD8F00DE97F7 /* LaunchScreen.storyboard */; };
 		63A73A2F2643CE4700DE97F7 /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A73A2E2643CE4700DE97F7 /* NetworkingProvider.swift */; };
 		63A73A322643CE9700DE97F7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 63A73A312643CE9700DE97F7 /* Alamofire */; };
@@ -25,11 +26,12 @@
 /* Begin PBXFileReference section */
 		636F0F4A264514BC0075D654 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		639EE064264914D50035CF82 /* Starships.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starships.swift; sourceTree = "<group>"; };
+		639EE06A264951CC0035CF82 /* StarshipsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarshipsView.xib; sourceTree = "<group>"; };
+		639EE06C2649527E0035CF82 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		63A73A162643CD8D00DE97F7 /* StarWarsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A73A192643CD8D00DE97F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63A73A1B2643CD8D00DE97F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		63A73A1D2643CD8D00DE97F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		63A73A202643CD8D00DE97F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		63A73A1D2643CD8D00DE97F7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		63A73A252643CD8F00DE97F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63A73A272643CD8F00DE97F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63A73A2E2643CE4700DE97F7 /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
@@ -60,6 +62,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		639EE06E264975520035CF82 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				63A73A3A26442C2B00DE97F7 /* StarshipsViewController.swift */,
+				63A73A1D2643CD8D00DE97F7 /* HomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		63A73A0D2643CD8D00DE97F7 = {
 			isa = PBXGroup;
 			children = (
@@ -79,15 +90,13 @@
 		63A73A182643CD8D00DE97F7 /* StarWarsApp */ = {
 			isa = PBXGroup;
 			children = (
-				63A73A3926442BEF00DE97F7 /* Views */,
 				63A73A192643CD8D00DE97F7 /* AppDelegate.swift */,
 				63A73A1B2643CD8D00DE97F7 /* SceneDelegate.swift */,
-				63A73A3A26442C2B00DE97F7 /* StarshipsViewController.swift */,
-				63A73A1F2643CD8D00DE97F7 /* Main.storyboard */,
-				636F0F4A264514BC0075D654 /* Assets.xcassets */,
-				63A73A242643CD8F00DE97F7 /* LaunchScreen.storyboard */,
-				63A73A272643CD8F00DE97F7 /* Info.plist */,
+				63A73A3926442BEF00DE97F7 /* Views */,
+				639EE06E264975520035CF82 /* Controllers */,
 				63A73A2D2643CE1100DE97F7 /* Network */,
+				63A73A272643CD8F00DE97F7 /* Info.plist */,
+				636F0F4A264514BC0075D654 /* Assets.xcassets */,
 			);
 			path = StarWarsApp;
 			sourceTree = "<group>";
@@ -122,7 +131,9 @@
 		63A73A3926442BEF00DE97F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				63A73A1D2643CD8D00DE97F7 /* ViewController.swift */,
+				63A73A242643CD8F00DE97F7 /* LaunchScreen.storyboard */,
+				639EE06C2649527E0035CF82 /* HomeView.xib */,
+				639EE06A264951CC0035CF82 /* StarshipsView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,7 +203,8 @@
 			files = (
 				63A73A262643CD8F00DE97F7 /* LaunchScreen.storyboard in Resources */,
 				636F0F4B264514BD0075D654 /* Assets.xcassets in Resources */,
-				63A73A212643CD8D00DE97F7 /* Main.storyboard in Resources */,
+				639EE06B264951CC0035CF82 /* StarshipsView.xib in Resources */,
+				639EE06D2649527E0035CF82 /* HomeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63A73A3C26442C2B00DE97F7 /* StarshipsViewController.swift in Sources */,
-				63A73A1E2643CD8D00DE97F7 /* ViewController.swift in Sources */,
+				63A73A1E2643CD8D00DE97F7 /* HomeViewController.swift in Sources */,
 				63A73A1A2643CD8D00DE97F7 /* AppDelegate.swift in Sources */,
 				63A73A2F2643CE4700DE97F7 /* NetworkingProvider.swift in Sources */,
 				63A73A352643CFF500DE97F7 /* User.swift in Sources */,
@@ -218,14 +230,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		63A73A1F2643CD8D00DE97F7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63A73A202643CD8D00DE97F7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		63A73A242643CD8F00DE97F7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

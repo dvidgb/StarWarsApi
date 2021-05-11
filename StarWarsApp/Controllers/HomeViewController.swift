@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     
     
@@ -17,21 +17,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     
     
-   
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        self.nameLabel.numberOfLines = 0
+        self.nameLabel?.numberOfLines = 0
         
-        nameLabel.text = ""
-        
+        nameLabel?.text = ""
         
         
     }
+    
+   
 
 
     
@@ -54,16 +53,12 @@ class ViewController: UIViewController {
     }//fin PeopleAction
     
     
-    
-    
-    
-    
-    @IBAction func StarshipsButtonAction(_ sender: Any) {
-        
-        
-        self.navigationController?.pushViewController(StarshipsViewController(),animated: true)
+    @IBAction func getStarshipsAction(_ sender: Any) {
+       
+        // Register Nib
+        let newViewController = StarshipsViewController(nibName: "StarshipsView", bundle: nil)
+        // Present View "Modally"
+        self.present(newViewController, animated: true, completion: nil)
     }
     
-    
 }
-

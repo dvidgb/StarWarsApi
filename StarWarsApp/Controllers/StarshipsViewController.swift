@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class StarshipsViewController: UIViewController, UITableViewDelegate {
+class StarshipsViewController: UINavigationController, UITableViewDelegate{
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -16,12 +16,18 @@ class StarshipsViewController: UIViewController, UITableViewDelegate {
     
     var items: [CustomStringConvertible] = []
 
-    @IBOutlet weak var titletextlabel: UILabel!
+   
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+     
+        delegate = self
+        
+        
         
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
@@ -81,4 +87,11 @@ extension StarshipsViewController: UITableViewDataSource{
         }
 }
     
+}
+
+extension StarshipsViewController:UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        print("TEST")
+        return nil
+    }
 }

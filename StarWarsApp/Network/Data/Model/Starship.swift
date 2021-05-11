@@ -38,7 +38,7 @@ struct Starship: Decodable {
 
 extension Starship: CustomStringConvertible {
     var description: String {
-          return "\(model!)"
+          return "\(name!)"
       }
 }
  
